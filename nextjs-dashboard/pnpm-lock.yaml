@@ -12,7 +12,7 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
     devDependencies:
-      '@types/bcrypt':
+      '@types/bcryptjs':
         specifier: ^5.0.2
         version: 5.0.2
       '@types/node':
@@ -27,7 +27,7 @@ importers:
 
 packages:
 
-  '@types/bcrypt@5.0.2':
+  '@types/bcryptjs@5.0.2':
     resolution: {integrity: sha512-6atioO8Y75fNcbmj0G7UjI9lXN2pQ/IGJ2FWT4a/btd0Lk9lQalHLKhkgKVZ3r+spnmWUKfbMi1GEe9wyHQfNQ==}
 
   '@types/node@22.10.7':
@@ -53,7 +53,7 @@ packages:
 
 snapshots:
 
-  '@types/bcrypt@5.0.2':
+  '@types/bcryptjs@5.0.2':
     dependencies:
       '@types/node': 22.10.7
 
