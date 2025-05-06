@@ -2,7 +2,7 @@
 import { createConnection } from 'mysql2/promise';
 
 // Função para conectar no MySQL
-async function connectToDatabase() {
+async function connectToDatabase()  {
     return createConnection({
         host: 'localhost',
         user: 'root',
@@ -12,7 +12,7 @@ async function connectToDatabase() {
 }
 
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
+    if (req.method !== 'POST')  {
         return res.status(405).json({ error: 'Metodo não permitido' });
     }
 
@@ -22,26 +22,26 @@ export default async function handler(req, res) {
     const { name, email} = userdata;
 
     if (!name || !email ) {
-        return res.status(400).json({ error: 'name e email são obrigatórios no request body.' });
+        return res.status(400).json({ error: 'name e email são obrigatorios no request body.' });
     }
     try {
         // Conecta no banco
         const connection = await connectToDatabase();
 
         // Executa a query para transacionar dados da tabela "user"
-        const [result] = await connection.execute('INSERT INTO users (name,email) VALUES (?, ?)', [
+        const [result] = await connection.execute('INSERT INTO users (name, email) VALUES (?, ?)', [
             name,
             email,
         ]);
-        // Checa se o usuário existe
+        // Checa se o usuario existe
 
-        // Encerra conexão
+        // Encerra conexao
         await connection.end();
 
         //Respond with the user data
-        res.status(201).json({ id: result.insertId, message: 'Usuário criado com sucesso!' });
-    } catch (error) {
-        console.error('Erro de conexão com o banco:', error);
+        res.status(201).json({ id: result.insertId, message: 'Usuario criado com sucesso!' });
+    }   catch (error) {
+        console.error('Error de canexao com o banco:', error);
         res.status(500).json({ error: 'Erro Interno de Servidor' });
     }
 }
