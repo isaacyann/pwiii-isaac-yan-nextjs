@@ -24,3 +24,148 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: calc(120px + 32px)
+}
+
+header img {
+  border-radius: 999px;
+  width: 120px;
+  padding:4px;
+}
+
+header div {
+  background-image: linear-gradient(90deg, #8E0E00 0%, #E100FF 50.52%, #4B0082 100%);
+  border-radius: 999px;
+  width: 120px;
+  display: flex;
+  margin: auto;
+  margin-top: 64px;
+  transition: transform .3s
+}
+
+body {
+  background-image: url('../public/assets/images/bg.jpg');
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: #121214;
+  margim-bottom: 32px
+}
+
+body * {
+  font-family: 'Inter', 'sans-serif';
+}
+
+main {
+  max-width: 580px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: 32px
+}
+
+section {
+  color: white;
+  background-image: linear-gradient(90deg, #8E0E00 0%, #E100FF 50.52%, #4B0082 100%);
+  padding-top: 4px;
+  border-radius: 11px;
+}
+
+section div {
+  background-color : #1E1B29;
+  border-radius: 8px;
+  padding: 24px 32px 32px;
+
+}
+
+section h2 {
+  letter-spacing: -0.47px;
+}
+
+section p {
+  color: #A1A1AA;
+  letter-spacing: -0.18px;
+}
+
+section ul {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.games-list img {
+  border-radius: 8px;
+  width: 90px;
+  transition: transform .3s  
+}
+
+.channel-list img {
+  width: 70px;
+  border: 1px solid #443E54;
+  border-radius: 999px;
+  transition: transform .3s
+}
+
+.social-list svg {
+  transition: transform .3s
+}
+
+header div:hover, 
+.games-list img:hover, 
+.channel-list img:hover, 
+.social-list svg:hover  {
+  transform: scale(1.1)
+}
+
+/* Animation */
+
+header div {
+  animation: fromTop .7s .1s backwards ;
+}
+main section {
+  animation: fromBotton .7s backwards ;
+}
+
+main section:nth-child(2){
+  animation-delay: .2s
+}
+main section:nth-child(3){
+  animation-delay: .4s
+}
+
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fromBotton {
+  from {
+    opacity: 0;
+    transform: translateY(30px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
